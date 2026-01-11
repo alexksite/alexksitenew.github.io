@@ -87,7 +87,7 @@
         font-weight: 400;
       }
 
-    .more-info {
+    .more-info1 {
       font-family: Georgia, serif;
       font-style: italic;
     }
@@ -101,7 +101,7 @@
           <ul class="sub-list">
               <li class="sub-item">
                 Design, implement, and maintain scalable ZK Framework applications tailored to complex business requirements.
-                <p class="more-info">
+                <p class="more-info1">
                   More info
                 </p>
               </li>
@@ -122,6 +122,140 @@
       </ul>
     </li>
   </ul>
+
+
+
+
+
+  <style>
+      .services {
+        padding-left: 20px;
+        font-family: Arial, sans-serif;
+      }
+      
+      .service-item {
+        margin-bottom: 28px;
+      }
+      
+      .service-title {
+        display: block;
+        font-weight: 700;
+        margin-bottom: 6px;
+      }
+      
+      .service-desc {
+        margin: 0 0 6px 0;
+        line-height: 1.5;
+      }
+      
+      /* More info button */
+      .more-info {
+        background: none;
+        border: none;
+        padding: 0;
+        cursor: pointer;
+      
+        font-family: "Times New Roman", Times, serif;
+        font-style: italic;
+        font-size: 14px;
+        color: #000;
+      
+        display: inline-flex;
+        align-items: center;
+        gap: 6px;
+      }
+      
+      .more-info .arrow {
+        transition: transform 0.25s ease;
+      }
+      
+      /* Hover animation */
+      .more-info:hover {
+        text-decoration: underline;
+      }
+      
+      .more-info:hover .arrow {
+        transform: translateX(4px);
+      }
+      
+      /* Expanded state */
+      .more-info[aria-expanded="true"] .arrow {
+        transform: rotate(90deg);
+      }
+      
+      /* Details panel */
+      .service-details {
+        max-height: 0;
+        overflow: hidden;
+        transition: max-height 0.35s ease, opacity 0.3s ease;
+        opacity: 0;
+        margin-left: 18px;
+      }
+      
+      .service-details p {
+        margin: 10px 0 0;
+        font-size: 14px;
+        line-height: 1.5;
+      }
+      
+      /* Visible details */
+      .service-details.open {
+        max-height: 300px;
+        opacity: 1;
+      }
+
+    
+  </style>
+  
+  <script>
+    document.querySelectorAll('.more-info').forEach(button => {
+      button.addEventListener('click', () => {
+        const details = button.nextElementSibling;
+        const expanded = button.getAttribute('aria-expanded') === 'true';
+  
+        button.setAttribute('aria-expanded', !expanded);
+        details.classList.toggle('open');
+      });
+    });
+  </script>
+  
+  <ul class="services">
+  <li class="service-item">
+    <strong class="service-title">Enterprise ZK full-stack development</strong>
+    <p class="service-desc">
+      Design, implement, and maintain scalable ZK Framework applications tailored to complex business requirements.
+    </p>
+
+    <button class="more-info" aria-expanded="false">
+      More info <span class="arrow">→</span>
+    </button>
+
+    <div class="service-details">
+      <p>
+        Includes architecture design, MVVM/MVC implementation, reusable components,
+        Keikai integration, and long-term maintenance of enterprise ZK systems.
+      </p>
+    </div>
+  </li>
+
+  <li class="service-item">
+    <strong class="service-title">Legacy system migration &amp; modernization</strong>
+    <p class="service-desc">
+      Upgrade and refactor existing ZK applications to improve performance, security, and maintainability.
+    </p>
+
+    <button class="more-info" aria-expanded="false">
+      More info <span class="arrow">→</span>
+    </button>
+
+    <div class="service-details">
+      <p>
+        Covers migration from older ZK versions, performance refactoring,
+        UI modernization, and risk-controlled rollout strategies.
+      </p>
+    </div>
+  </li>
+</ul>
 </section>
 
 <section id="portfolio" class="section">
