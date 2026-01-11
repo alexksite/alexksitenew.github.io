@@ -45,7 +45,7 @@
   </p>
 </section>
 
-<section id="services" class="section alt">
+<!--section id="services" class="section alt">
   <h2>What I Do</h2>
   <ul class="services-list">
     <li>ZK full-stack development <a href="contact_project.html">More info</a></li>
@@ -121,7 +121,7 @@
         </li>
       </ul>
     </li>
-  </ul>
+</ul-->
 
 
 
@@ -363,26 +363,24 @@
       }
   </style>
   <script>
-const buttons = document.querySelectorAll('.more-info');
-
-buttons.forEach(btn => {
-  btn.addEventListener('click', () => {
-    const isExpanded = btn.getAttribute('aria-expanded') === 'true';
-    const details = btn.nextElementSibling;
-
-    // Accordion: close all others
-    document.querySelectorAll('.details').forEach(d => d.classList.remove('open'));
-    document.querySelectorAll('.more-info').forEach(b => b.setAttribute('aria-expanded', 'false'));
-
-    // Toggle current
-    if (!isExpanded) {
-      btn.setAttribute('aria-expanded', 'true');
-      details.classList.add('open');
-    }
-  });
-});
-
+    const buttons = document.querySelectorAll('.more-info');
     
+    buttons.forEach(btn => {
+      btn.addEventListener('click', () => {
+        const isExpanded = btn.getAttribute('aria-expanded') === 'true';
+        const details = btn.nextElementSibling;
+    
+        // Accordion: close all others
+        document.querySelectorAll('.details').forEach(d => d.classList.remove('open'));
+        document.querySelectorAll('.more-info').forEach(b => b.setAttribute('aria-expanded', 'false'));
+    
+        // Toggle current
+        if (!isExpanded) {
+          btn.setAttribute('aria-expanded', 'true');
+          details.classList.add('open');
+        }
+      });
+    });
   </script>
   
 
