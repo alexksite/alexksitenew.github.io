@@ -380,6 +380,7 @@
             btn.addEventListener('click', () => {
               const isExpanded = btn.getAttribute('aria-expanded') === 'true';
               const details = btn.nextElementSibling;
+              console.log(details);
           
               // Accordion: close all others
               document.querySelectorAll('.services-list').forEach(d => d.classList.remove('open'));
